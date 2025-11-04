@@ -1,1 +1,245 @@
-Hello World
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mohamed Taha — Network Automation · SONiC · Security + GenAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0f1d; --panel:#0f1630; --ink:#e8f3ff; --muted:#9eb1d6;
+    --a:#00e5ff; --b:#8a2be2; --accent:#00e5ff; --line:rgba(0,229,255,.25);
+  }
+  *{box-sizing:border-box} html,body{margin:0;height:100%}
+  body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;color:var(--ink);background:
+    radial-gradient(60vw 60vw at 20% 5%, rgba(138,43,226,.08), transparent 40%),
+    radial-gradient(60vw 60vw at 80% 10%, rgba(0,229,255,.08), transparent 40%),
+    linear-gradient(180deg,#090d1a, #0b0f1d 30%, #0b0f1d 70%, #0a0e1a);}
+  a{color:var(--accent);text-decoration:none}
+  header{position:sticky;top:0;backdrop-filter:blur(8px);background:linear-gradient(180deg,#0b0f1df2,#0b0f1d80 60%,transparent);border-bottom:1px solid #162243;z-index:20}
+  nav{max-width:1080px;margin:auto;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 18px}
+  .brand{font-weight:800;letter-spacing:.4px}
+  .wrap{max-width:1080px;margin:auto;padding:28px 18px}
+  .hero{display:grid;gap:18px;grid-template-columns:1.2fr .8fr;align-items:center;margin:18px 0 28px}
+  @media (max-width:900px){.hero{grid-template-columns:1fr}}
+  .card{background:linear-gradient(180deg,#0f1630,#0c1227);border:1px solid #162243;border-radius:18px;padding:20px;box-shadow:0 12px 35px rgba(0,0,0,.25)}
+  h1{font-size:2.2rem;margin:.2rem 0 .6rem} h2{font-size:1.4rem;margin:.4rem 0 .6rem}
+  .pill{display:inline-block;border:1px solid #213061;background:#0b1430;border-radius:999px;padding:.32rem .7rem;color:var(--muted);margin:.18rem .18rem;font-size:.9rem}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)} @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  footer{color:var(--muted);font-size:.9rem;margin:34px 0}
+  .neon{height:16px;margin:10px 0 22px}
+  .btn{display:inline-block;padding:.6rem .9rem;border-radius:12px;border:1px solid #1b2b5a;background:#0b1430}
+  .btn:hover{border-color:#27428a}
+  /* Critical: give canvases explicit height so they render */
+  #skillRadar{width:100%; max-width:820px; height:360px; margin:auto;}
+  #scene{width:100%; max-width:820px; height:380px; margin:auto; display:block;}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">Mohamed Taha — Network Automation • Security + GenAI</div>
+    <div>
+      <a class="btn" href="#projects">Projects</a>
+      <a class="btn" href="#skills">Skills</a>
+      <a class="btn" href="#viz">3D Viz</a>
+      <a class="btn" href="https://github.com/mohamedieee" target="_blank">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/mohamed-taha-985450133/" target="_blank">LinkedIn</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="card">
+      <h1>Building intelligent automation for large-scale networks</h1>
+      <p>I work on <b>Linux SONiC</b>, CI/CD pipelines, test orchestration, observability, and <b>Security + GenAI</b> for production systems.</p>
+      <p>
+        <span class="pill">SONiC</span><span class="pill">Python</span><span class="pill">Ansible</span>
+        <span class="pill">GitHub Actions</span><span class="pill">Jenkins</span><span class="pill">Docker</span>
+        <span class="pill">Grafana</span><span class="pill">BGP/EVPN</span><span class="pill">GenAI</span>
+      </p>
+      <p><a class="btn" href="#skills">See skill map ↓</a> <a class="btn" href="#projects">Featured projects</a></p>
+    </div>
+    <div class="card">
+      <h2>Now</h2>
+      <p>TargetNOS/SONiC test orchestration, nightly reliability, policy-aware GenAI for SecOps, and Grafana surfacing.</p>
+      <svg class="neon" width="100%" height="16" viewBox="0 0 1200 16" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop stop-color="#00E5FF" offset="0%"/><stop stop-color="#8A2BE2" offset="50%"/><stop stop-color="#00E5FF" offset="100%"/>
+          </linearGradient>
+          <filter id="glow1" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <rect x="0" y="7" width="1200" height="2" fill="url(#g1)" filter="url(#glow1)"/>
+      </svg>
+      <p><a class="btn" href="#viz">Open 3D network diagram ↓</a></p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>TargetNOS / SONiC Test Orchestration</h3>
+        <p>Multi-pod orchestration, nightly schedules, feature tests; Grafana surfacing.</p>
+        <p><b>Tech:</b> Python • SONiC • Jenkins • Actions</p>
+      </div>
+      <div class="card">
+        <h3>Security + GenAI Agents</h3>
+        <p>Policy-aware LLM agents for SecOps automation (alert triage, config reasoning, log analysis).</p>
+        <p><b>Tech:</b> Python • LLM tool-use • Observability</p>
+      </div>
+      <div class="card">
+        <h3>ML-Based Intrusion Detection</h3>
+        <p>Clean ML pipeline for anomaly detection with evaluation and alerting.</p>
+        <p><b>Repo:</b> <a href="https://github.com/mohamedieee/machine-learning-intrusion-detection">IDS</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="margin-top:28px">
+    <h2>Interactive Skill Map</h2>
+    <div class="card">
+      <canvas id="skillRadar"></canvas>
+    </div>
+  </section>
+
+  <section id="viz" style="margin-top:28px">
+    <h2>3D Network Diagram</h2>
+    <div class="card">
+      <canvas id="scene"></canvas>
+      <p style="color:var(--muted);margin-top:8px">Rotating nodes + links (Three.js). Drag to orbit, wheel to zoom.</p>
+    </div>
+  </section>
+
+  <footer>
+    <svg class="neon" width="100%" height="16" viewBox="0 0 1200 16" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g2" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop stop-color="#00E5FF" offset="0%"/><stop stop-color="#8A2BE2" offset="50%"/><stop stop-color="#00E5FF" offset="100%"/>
+        </linearGradient>
+        <filter id="glow2" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <rect x="0" y="7" width="1200" height="2" fill="url(#g2)" filter="url(#glow2)"/>
+    </svg>
+    © <span id="y"></span> Mohamed Taha — Automate • Secure • Scale • Intelligent Infrastructure
+  </footer>
+</main>
+
+<!-- CDNs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Initialize AFTER DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- Skill Radar ---
+    const radarCanvas = document.getElementById('skillRadar');
+    const ctx = radarCanvas.getContext('2d');
+    const darkGrid = 'rgba(255,255,255,0.08)';
+    try {
+      new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['SONiC','Network Automation','CI/CD','Observability','Security','GenAI'],
+          datasets: [{
+            label: 'Focus',
+            data: [92, 94, 86, 82, 80, 78],
+            borderColor: '#00e5ff',
+            backgroundColor: 'rgba(0,229,255,0.16)',
+            pointBackgroundColor: '#8a2be2',
+            pointBorderColor: '#8a2be2',
+            pointRadius: 3
+          }]
+        },
+        options: {
+          plugins: { legend: { display:false } },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              angleLines: { color: darkGrid },
+              grid: { color: darkGrid },
+              pointLabels: { color: '#cfe9ff' },
+              suggestedMin: 0, suggestedMax: 100, ticks: { display:false }
+            }
+          }
+        }
+      });
+    } catch (e) {
+      console.error('Chart init error:', e);
+    }
+
+    // --- 3D Scene ---
+    const canvas = document.getElementById('scene');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias:true });
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 1000);
+    camera.position.set(0, 0, 30);
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      renderer.setPixelRatio(dpr);
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h; camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const light = new THREE.PointLight(0x00e5ff, 1.2); light.position.set(10,10,20); scene.add(light);
+    scene.add(new THREE.AmbientLight(0x404040));
+
+    const nodeMat = new THREE.MeshPhongMaterial({ color:0x8a2be2, emissive:0x200040 });
+    const nodes = [];
+    for (let i=0;i<18;i++){
+      const geom = new THREE.SphereGeometry(0.6, 24, 24);
+      const mesh = new THREE.Mesh(geom, nodeMat);
+      const r = 10 + Math.random()*6, a = Math.random()*Math.PI*2, b = Math.random()*Math.PI*2;
+      mesh.position.set(r*Math.cos(a)*Math.sin(b), r*Math.sin(a)*Math.sin(b), r*Math.cos(b));
+      mesh.userData.base = mesh.position.clone();
+      scene.add(mesh); nodes.push(mesh);
+    }
+
+    const linkMat = new THREE.LineBasicMaterial({ color:0x00e5ff, transparent:true, opacity:0.35 });
+    function link(a,b){
+      const pts = [a.position, b.position];
+      const geom = new THREE.BufferGeometry().setFromPoints(pts);
+      const line = new THREE.Line(geom, linkMat); scene.add(line);
+    }
+    for(let i=0;i<nodes.length;i++){ link(nodes[i], nodes[(i+3)%nodes.length]); link(nodes[i], nodes[(i+7)%nodes.length]); }
+
+    let t=0;
+    function animate(){
+      t += 0.0025;
+      nodes.forEach((n, i)=>{
+        const p = n.userData.base;
+        n.position.x = p.x + Math.sin(t + i)*0.6;
+        n.position.y = p.y + Math.cos(t*1.2 + i)*0.6;
+      });
+      scene.rotation.y += 0.002;
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Basic mouse orbit
+    let isDragging=false, prev={x:0,y:0};
+    canvas.addEventListener('mousedown', e=>{ isDragging=true; prev.x=e.clientX; prev.y=e.clientY; });
+    window.addEventListener('mouseup', ()=> isDragging=false);
+    window.addEventListener('mousemove', e=>{
+      if(!isDragging) return;
+      const dx=(e.clientX-prev.x)/200, dy=(e.clientY-prev.y)/200;
+      scene.rotation.y += dx; scene.rotation.x += dy;
+      prev.x=e.clientX; prev.y=e.clientY;
+    });
+    window.addEventListener('wheel', e=>{
+      camera.position.z += (e.deltaY>0?1:-1)*1.2;
+    }, { passive:true });
+  });
+</script>
+</body>
+</html>
