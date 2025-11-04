@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Blog / Notes · Mohamed Taha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0f1d;--panel:#0f1630;--ink:#e8f3ff;--muted:#9eb1d6;--accent:#00e5ff}
+*{box-sizing:border-box}html,body{margin:0;height:100%}
+body{font-family:Inter,system-ui;color:var(--ink);background:linear-gradient(180deg,#090d1a,#0b0f1d 30%,#0b0f1d)}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:900px;margin:auto;padding:28px 18px}
+.card{background:linear-gradient(180deg,#0f1630,#0c1227);border:1px solid #162243;border-radius:18px;padding:18px;margin:12px 0}
+.hint{color:#9eb1d6}
+.btn{display:inline-block;padding:.45rem .7rem;border-radius:10px;border:1px solid #27428a;background:#0b1430}
+.details{display:none;margin-top:12px}
+</style></head><body>
+<main class="wrap">
+  <p><a class="btn" href="hub.html">Back</a></p>
+  <h1>Blog / Notes</h1>
+
+  <div class="card">
+    <h2>Designing SONiC Test Pipelines that Actually Scale</h2>
+    <p class="hint">Note • Draft</p>
+    <p><button class="btn" data-target="#b1">Read</button></p>
+    <div id="b1" class="details">
+      <p>On priority queues, isolation for long-running feature tests, and CI/CD ergonomics.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>LLM-Enabled Diagnostics for Network Incidents</h2>
+    <p class="hint">Note • Outline</p>
+    <p><button class="btn" data-target="#b2">Read</button></p>
+    <div id="b2" class="details"><p>Policy-aware prompts, tool-use patterns, and guardrails.</p></div>
+  </div>
+</main>
+<script>
+document.querySelectorAll('[data-target]').forEach(b=>{
+  b.addEventListener('click',()=>{const el=document.querySelector(b.getAttribute('data-target'));el.style.display=(el.style.display==='block'?'none':'block');});
+});
+</script>
+</body></html>

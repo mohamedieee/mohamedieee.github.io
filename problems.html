@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Problem-Solving · Mohamed Taha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0f1d;--panel:#0f1630;--ink:#e8f3ff;--muted:#9eb1d6;--accent:#00e5ff}
+*{box-sizing:border-box}html,body{margin:0;height:100%}
+body{font-family:Inter,system-ui;color:var(--ink);background:linear-gradient(180deg,#090d1a,#0b0f1d 30%,#0b0f1d)}
+a{color:var(--accent);text-decoration:none}
+header{position:sticky;top:0;backdrop-filter:blur(8px);background:#0b0f1dd9;border-bottom:1px solid #162243}
+nav{max-width:1080px;margin:auto;display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 18px}
+.brand{font-weight:800}
+.wrap{max-width:1080px;margin:auto;padding:28px 18px}
+.card{background:linear-gradient(180deg,#0f1630,#0c1227);border:1px solid #162243;border-radius:18px;padding:16px;margin:12px 0}
+.tag{display:inline-block;border:1px solid #27428a;background:#0b1430;border-radius:999px;padding:.2rem .55rem;margin-right:.3rem}
+.details{display:none;margin-top:10px;color:#cfe9ff}
+.toggle{border:1px solid #27428a;background:#0b1430;border-radius:10px;padding:.45rem .7rem}
+</style></head><body>
+<header><nav>
+  <div class="brand"><a href="./" style="color:var(--ink)">Mohamed Taha — Problem-Solving</a></div>
+  <div><a class="toggle" href="hub.html">Back</a></div>
+</nav></header>
+<main class="wrap">
+  <h1>Problem-Solving Showcase</h1>
+
+  <div class="card">
+    <h3>Nightly pipeline flaky due to pod scheduling conflicts</h3>
+    <span class="tag">SONiC</span><span class="tag">CI/CD</span><span class="tag">Reliability</span>
+    <p><button class="toggle" data-target="#p1">Read the deep dive</button></p>
+    <div id="p1" class="details">
+      <p><b>Problem:</b> Conflicting long-running feature tests starved smoke tests; regressions went unseen.</p>
+      <p><b>Approach:</b> Priority queues + max-concurrency caps per pod, plus Grafana alerts on queue depth.</p>
+      <p><b>Outcome:</b> 42% reduction in time-to-signal; nightly pass-rate stabilized.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>SecOps alert fatigue: triage time too high</h3>
+    <span class="tag">Security</span><span class="tag">GenAI</span><span class="tag">LLM Tool-use</span>
+    <p><button class="toggle" data-target="#p2">Read the deep dive</button></p>
+    <div id="p2" class="details">
+      <p><b>Problem:</b> Analysts overloaded by noisy alerts and verbose logs.</p>
+      <p><b>Approach:</b> Policy-aware agent to summarize alerts, pull related logs, and propose actions.</p>
+      <p><b>Outcome:</b> Median triage time cut by ~35%; better escalations.</p>
+    </div>
+  </div>
+</main>
+<script>
+document.querySelectorAll('.toggle').forEach(b=>{
+  const id=b.getAttribute('data-target'); if(!id) return;
+  b.addEventListener('click',()=>{ const el=document.querySelector(id); if(!el) return; el.style.display=(el.style.display==='block'?'none':'block'); });
+});
+</script>
+</body></html>
